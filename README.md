@@ -11,3 +11,29 @@ TODOS = {
 
     'result': {'player': 2 },
 }
+
+
+@method
+def fill_tunnels():
+    tunnels_num = random.randint(1, 10)
+    start = []
+    end = []
+    for tunnel in range(tunnels_num):
+        start.append(random.randint(3, 94)) # Leave first 3 and last 3 places free of ladders
+    for x in start:
+        end.append(random.randint(x+3, 100))
+    #print(start, " : ", end)
+    tunnels = list(start + end)
+    return tunnels
+@method
+def fill_snakes():
+    snakes_num = random.randint(1, 10)
+    start = []
+    end = []
+    for snake in range(snakes_num):
+        start.append(random.randint(6, 97)) # Leave first 3 and last 3 places free of snakes
+    for x in start:
+        end.append(random.randint(1, x-3))
+    #print(start, " : ", end)
+    snakes = list(start + end)
+    return snakes
